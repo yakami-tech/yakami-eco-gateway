@@ -71,5 +71,44 @@
             YAKAMI TECH | Deep Tech for the Amazon Basin <br> Alinhado à Norma 204 - Marinha do Brasil
         </footer>
     </div>
+
+    <div id="pixModal" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center p-4 z-50">
+    <div class="bg-zinc-900 border border-emerald-500/30 p-8 rounded-3xl max-w-sm w-full text-center">
+        <h3 class="text-xl font-bold mb-4">Recarga Yakami Points</h3>
+        <p class="text-xs opacity-60 mb-6">Escaneie o QR Code abaixo para receber 50 Y-Points (R$ 5,00)</p>
+        
+        <div class="bg-white p-4 rounded-2xl mb-6 inline-block">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=YakamiTechPIXSimulation" alt="QR Code PIX">
+        </div>
+
+        <button onclick="simularPagamento()" class="w-full bg-emerald-500 text-black font-bold py-3 rounded-xl mb-3">
+            SIMULAR PAGAMENTO CONFIRMADO
+        </button>
+        <button onclick="fecharModal()" class="text-xs opacity-50 uppercase tracking-widest">Cancelar</button>
+    </div>
+</div>
+
+<script>
+    function abrirModal() {
+        document.getElementById('pixModal').classList.remove('hidden');
+    }
+
+    function fecharModal() {
+        document.getElementById('pixModal').classList.add('hidden');
+    }
+
+    function simularPagamento() {
+        alert("Pagamento Confirmado! 50 Y-Points foram adicionados à sua carteira.");
+        // Aqui no futuro o Walter integrará com a Blockchain
+        fecharModal();
+        // Atualiza o saldo na tela de forma visual
+        const saldoAtual = document.querySelector('h2');
+        saldoAtual.innerHTML = '200 <span class="text-lg font-normal opacity-50 text-white">Y-Points</span>';
+    }
+
+    // Vincula o clique do botão de recarga à função de abrir o modal
+    document.querySelector('button.bg-emerald-500').setAttribute('onclick', 'abrirModal()');
+</script>
+    
 </body>
 </html>
