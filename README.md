@@ -36,6 +36,8 @@ yakami-eco-gateway/
 ├── .env.exemplo              # Variáveis de ambiente para integração de backend
 └── README.md                 # Documentação técnica do módulo
 
+```
+
 🚀 Como Executar o Ambiente de Demonstração
 Smart Contracts:
 
